@@ -1,0 +1,12 @@
+<% @artists = Artist.all %>
+<div id="artist-display">
+  <% if !@artists.nil?
+    @artists.each do |artist|%>
+      <div class="artist">
+        <h1 class="art-name"><%= artist.name %></h1>
+        <span class="art-genre">Genre: <%= artist.genre %></span>
+        <div class="disclosure-button"><i class="fa fa-angle-right"></i></div>
+      </div>
+    <% end
+  end%>
+</div>

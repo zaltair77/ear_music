@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>E A R</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header id="top-bar">
+      <a href="/playback"><img id="playback" src="/images/EAR_Playback.svg" alt="" /></a>
+      <span id="ear">E<span id="a"> A </span>R</span>
+      <a href="/settings"><img id="settings" src="/images/EAR_Settings.svg" alt="" /></a>
+    </header>
+    <div id="music-body">
+      <div id="playlists" class="music-item">
+        Playlists
+        <div class="disclosure-button"><i class="fa fa-angle-right"></i></div>
+      </div>
+      <div onclick="artists()" id="artists" class="music-item">
+        Artists
+        <div class="disclosure-button"><i class="fa fa-angle-right"></i></div>
+      </div>
+      <div onclick="albums()" id="albums" class="music-item">
+        Albums
+        <div class="disclosure-button"><i class="fa fa-angle-right"></i></div>
+      </div>
+      <div onclick="songs()" id="songs" class="music-item">
+        Songs
+        <div class="disclosure-button"><i class="fa fa-angle-right"></i></div>
+      </div>
+    </div>
+    <div id="slide-panel" class="off-screen">
+
+    </div>
+    <nav>
+      <div class="nav-item" id="feed-nav">
+        <i class="fa fa-id-card-o"></i>
+        <br>
+        Feed
+      </div>
+      <a class="nav-item" href="/search"><div id="search-nav">
+        <i class="fa fa-search"></i>
+        <br>
+        Search
+      </div></a>
+      <a class="nav-item" href="/profile"><div id="prof-nav">
+        <i class="fa fa-user-circle"></i>
+        <br>
+        Profile
+      </div></a>
+      <a class="nav-item current" href="/music"><div id="music-nav">
+        <i class="fa fa-music"></i>
+        <br>
+        My Music
+      </div></a>
+      <div class="nav-item" id="browse-nav">
+        <i class="fa fa-home"></i>
+        <br>
+        Browse
+      </div>
+    </nav>
+  </body>
+
+  <script type="text/javascript">
+
+  $(document).ready(function () {
+
+  });
+
+  function artists () {
+    $('#slide-panel').removeClass('off-screen');
+    $('#slide-panel').addClass('on-screen');
+    $('#slide-panel').html("<%= j (render 'artists_slide') %>");
+  }
+
+  function albums () {
+    $('#slide-panel').removeClass('off-screen');
+    $('#slide-panel').addClass('on-screen');
+    $('#slide-panel').html("<%= j (render 'albums_slide') %>");
+  }
+
+  </script>
+
+</html>

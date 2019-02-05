@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css?family=Gruppo');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400');
+
+$accent: rgb(65,179,245);
+$roboto: 'Roboto', sans-serif;
+$head_font: 'Gruppo', cursive;
+$main_size: 4rem;
+
+#top-bar {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8%;
+  background-color: $accent;
+  font-family: $head_font;
+  text-shadow: 0px 0px 30px lighten($accent, 60%);
+  text-align: center;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, .3);
+
+  #ear {
+    position: relative;
+    width:100%;
+
+    font-size: 8rem;
+
+    #a {
+      position: relative;
+      width: auto;
+      line-height: 1rem;
+      font-size: 7rem;
+      // font-weight: bold;
+    }
+  }
+
+  #playback {
+    position: absolute;
+    left: 1rem;
+    height: 80%;
+    width: auto;
+    margin-top: .8rem;
+    border-radius: 10rem;
+  }
+
+  #settings {
+    position: absolute;
+    right: 1rem;
+    height: 80%;
+    width: auto;
+    margin-top: .8rem;
+    border-radius: 10rem;
+  }
+}
+
+#prof-body {
+  position: absolute;
+  top: 8%;
+  font-family: $roboto;
+  font-size: $main_size;
+  width:100%;
+  height: 92%;
+
+  #cover-hold {
+    position: relative;
+    width: 100%;
+    height: 25%;
+    background: linear-gradient(fade-out(black, .7) 0%, fade-out(black, .7) 60%, fade-out(black, .4) 90%, fade-out(black, 0) 100%);
+
+    #cover-img {
+      z-index: -1;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+  }
+
+  #prof-img {
+    position: relative;
+    width: 30%;
+    margin-left: 35%;
+    top: -14rem;
+    border: .6rem solid white;
+    border-radius: 100rem;
+  }
+
+  #username {
+    position: relative;
+    top:-15rem;
+    font-size: 6rem;
+    font-weight: 300;
+    margin:0;
+    padding:0;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1.2rem;
+    box-shadow: 0px 20px 30px -20px #888888;
+  }
+
+  #link {
+    position: relative;
+    top:-15rem;
+    font-size: 3rem;
+    font-weight: 300;
+    padding: 2rem;
+    padding-left: 3rem;
+    border-top: 1px solid rgba(20, 20, 20, .5);
+    border-bottom: 1px solid rgba(20, 20, 20, .5);
+
+    div {
+      width: 30%;
+      float: left;
+    }
+
+    a {
+      text-decoration: none;
+      color: $accent;
+      width: 70%;
+      text-align:center;
+      font-size: 2.4rem;
+    }
+  }
+
+  .profile-item {
+    position: relative;
+    top:-15rem;
+    font-size: 3rem;
+    font-weight: 300;
+    padding: 2rem;
+    padding-left: 3rem;
+    border-bottom: 1px solid rgba(20, 20, 20, .5);
+
+    .disclosure-button {
+      position: relative;
+      width: 4rem;
+      padding-left: 2.4rem;
+      margin-right: 3rem;
+      top: -1rem;
+      float:right;
+      font-size: 5rem;
+      border-radius: 10rem;
+      background-color: white;
+      color: $accent;
+      transition: all .25s ease-out;
+    }
+  }
+
+  #about-section {
+    animation: fade-in 1s ease-out;
+  }
+
+  #song-section {
+    min-height: 16rem;
+
+    img {
+      position: relative;
+      float:left;
+      padding: 1rem;
+      padding-right: 3rem;
+      margin: 0;
+      animation: fade-in 1s ease-out;
+    }
+
+    #song-info {
+      position: absolute;
+      margin-left: 28%;
+      line-height: 1rem;
+      top:45%;
+      animation: fade-in 1s ease-out;
+
+      h2, h3 {
+        float: left;
+        margin-top: 1rem;
+        padding: 0;
+        font-weight: 300;
+        // font-size: 5rem;
+
+        a {
+          color: $accent;
+        }
+      }
+
+      h2 {
+        margin-top: .5rem;
+      }
+
+      span {
+        position: relative;
+        float: left;
+        margin-top: .6rem;
+        margin-left: 2rem;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+  }
+
+  .inset {
+    position: relative;
+    top:-15rem;
+    font-size: 2.6rem;
+    font-weight: 300;
+    padding: 2rem;
+    box-shadow: inset 0px 20px 30px -20px #888888, inset 0px -20px 30px -24px #888888;
+  }
+
+  #extra-space {
+    position: relative;
+    bottom: 0;
+    height: 16%;
+    background: linear-gradient(white, lighten($accent, 10%));
+  }
+}
+
+nav {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 8%;
+  border-top: 1px solid rgba(20, 20, 20, .5);
+  background-color: $accent;
+  color:white;
+  display: inline-flex;
+  justify-content: space-between;
+
+  a {
+    text-decoration: none;
+    color:white;
+  }
+
+  .nav-item {
+    position: relative;
+    text-align: center;
+    float: left;
+    width: 19%;
+    height: 100%;
+    padding-top: 1rem;
+    border-right: 1px solid rgba(20, 20, 20, .5);
+    font-size: 2rem;
+    font-family: $roboto;
+
+    .fa {
+      font-size: 4.5rem;
+      padding-bottom: .3rem;
+    }
+  }
+
+  .current {
+    background-color: black;
+    color: $accent;
+    transform: scale(1.15);
+    padding-top: .8rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  #browse-nav {
+    border: none;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

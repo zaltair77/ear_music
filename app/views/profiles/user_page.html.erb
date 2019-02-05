@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>E A R</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header id="top-bar">
+      <a href="/playback"><img id="playback" src="/images/EAR_Playback.svg" alt="" /></a>
+      <span id="ear">E<span id="a"> A </span>R</span>
+      <a href="/settings"><img id="settings" src="/images/EAR_Settings.svg" alt="" /></a>
+    </header>
+    <div id="prof-body">
+      <div id="cover-hold"><img id="cover-img" src="<%= @profile.cover_image %>" alt="" /></div>
+      <img id="prof-img" src="<%= @profile.pic %>" alt="" />
+      <h1 id="username"><%= @profile.username %></h1>
+      <div id="link">
+        <div class="">Website:</div><a href="<%= @profile.link %>"><%= @profile.link %></a>
+      </div>
+      <div id="about" class="profile-item">
+        About <div class="about-disc ab-hidden disclosure-button"><i class="fa fa-angle-right"></i></div>
+      </div>
+      <div id="about-section" class="inset" style="display:none"></div>
+      <div id="last-played" class="profile-item">
+        Last Song Played <div class="song-disc song-hidden disclosure-button"><i class="fa fa-angle-right"></i></div>
+      </div>
+      <div id="song-section" class="inset" style="display:none"></div>
+      <div id="extra-space"></div>
+    </div>
+    <nav>
+      <div class="nav-item" id="feed-nav">
+        <i class="fa fa-id-card-o"></i>
+        <br>
+        Feed
+      </div>
+      <a class="nav-item" href="/search"><div id="search-nav">
+        <i class="fa fa-search"></i>
+        <br>
+        Search
+      </div></a>
+      <a class="nav-item current" href="/profile"><div id="prof-nav">
+        <i class="fa fa-user-circle"></i>
+        <br>
+        Profile
+      </div></a>
+      <a class="nav-item" href="/music"><div id="music-nav">
+        <i class="fa fa-music"></i>
+        <br>
+        My Music
+      </div></a>
+      <div class="nav-item" id="browse-nav">
+        <i class="fa fa-home"></i>
+        <br>
+        Browse
+      </div>
+    </nav>
+  </body>
+
+  <script type="text/javascript">
+
+  $(document).ready(function() {
+
+    $('.rot').click(function() {
+      var button3 = $(this);
+      button3.css('transform', 'rotate(-90deg)');
+      button3.removeClass("rot");
+      button3.addClass("hidden");
+      $('#about-section').html("");
+      $('#about-section').css('height','0px');
+      $('#about-section').css('display','none');
+    });
+
+    $('.ab-hidden').click(function() {
+      var button1 = $(this);
+      button1.css('transform', 'rotate(90deg)');
+      button1.addClass("rot");
+      button1.removeClass("ab-hidden");
+      $('#about-section').html("<%= j (render 'user_about') %>");
+      $('#about-section').slideDown(350);
+    });
+
+    $('.song-hidden').click(function() {
+      var button2 = $(this);
+      button2.css('transform', 'rotate(90deg)');
+      button2.addClass("rot");
+      button2.removeClass("song-hidden");
+      $('#song-section').html("<%= j (render 'user_last_song') %>");
+      $('#song-section').slideDown(350);
+    });
+  });
+  </script>
+
+</html>

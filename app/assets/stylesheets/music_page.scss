@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css?family=Gruppo');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400');
+
+$accent: rgb(65,179,245);
+$roboto: 'Roboto', sans-serif;
+$head_font: 'Gruppo', cursive;
+$main_size: 4rem;
+
+body {
+  font-family: $roboto;
+}
+
+#music-body {
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .music-item {
+    position: relative;
+    top: 8rem;
+    font-size: 3rem;
+    font-weight: 300;
+    padding: 2rem;
+    padding-left: 3rem;
+    border-bottom: 1px solid rgba(20, 20, 20, .5);
+
+    .disclosure-button {
+      position: relative;
+      width: 4rem;
+      padding-left: 2.4rem;
+      margin-right: 3rem;
+      top: -1rem;
+      float:right;
+      font-size: 5rem;
+      border-radius: 10rem;
+      background-color: white;
+      color: $accent;
+      transition: all .25s ease-out;
+    }
+  }
+}
+
+#slide-panel {
+  position: fixed;
+  transition: left .35s ease-out;
+  background: white;
+  top: 0;
+  bottom: 0;
+  box-shadow: -3px 0px 100px rgba(0,0,0,.6);
+
+  #artist-display {
+    font-family: $roboto;
+    font-weight: 300;
+    position: absolute;
+    top:9rem;
+    bottom:8rem;
+    left:0;
+    right:0;
+
+    .artist {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: auto;
+      padding:0;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      margin:.5rem;
+      border-bottom: 1px solid black;
+
+      .art-name {
+        font-size: $main_size;
+        padding:0;
+        padding-left: 2rem;
+        padding-bottom: 1rem;
+        margin:0;
+      }
+
+      .art-genre {
+        font-size: 2rem;
+        padding-left: 4rem;
+      }
+
+      .disclosure-button {
+        position: relative;
+        width: 4rem;
+        padding-left: 2.4rem;
+        margin-right: 3rem;
+        top: -5rem;
+        float:right;
+        font-size: 5rem;
+        border-radius: 10rem;
+        background-color: white;
+        color: $accent;
+        transition: all .25s ease-out;
+      }
+    }
+  }
+
+  #album-display {
+    font-family: $roboto;
+    font-weight: 300;
+    position: absolute;
+    top:10rem;
+    bottom:8rem;
+    left:0;
+    right:0;
+    padding-left: 2%;
+
+    .album {
+      position: relative;
+      display: block;
+      float: left;
+      width: 46%;
+      height: auto;
+      padding:0;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      margin-left: 1.6%;
+      margin-right: 1%;
+
+      .album-art {
+        width:96%;
+        height:auto;
+        padding:0;
+        margin:0;
+        margin-left: 2%;
+        padding-bottom: 1rem;
+      }
+
+      .art-grad {
+        position: absolute;
+        z-index: 4;
+        background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .2) 50%, black);
+        width:96%;
+        bottom:2rem;
+        top:0;
+        padding:0;
+        margin:0;
+        margin-left: 2%;
+        padding-bottom: 1rem;
+      }
+
+      .title-artist {
+        font-weight: 300;
+        position: absolute;
+        width:96%;
+        margin-left: 2%;
+        z-index: 5;
+        height: 0;
+        bottom: 9rem;
+        left: 0;
+        font-size: 2.7rem;
+        color: $accent;
+        left: 1rem;
+      }
+
+      .disclosure-button {
+        position: relative;
+        width: 4rem;
+        padding-left: 2.4rem;
+        margin-right: 3rem;
+        top: -5rem;
+        float:right;
+        font-size: 5rem;
+        border-radius: 10rem;
+        background-color: white;
+        color: $accent;
+        transition: all .25s ease-out;
+      }
+    }
+  }
+}
+
+.off-screen {
+  left: 100%;
+}
+
+.on-screen {
+  z-index: 1;
+  left:0;
+  width: 100%;
+  height:100%;
+}

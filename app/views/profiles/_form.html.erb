@@ -1,0 +1,52 @@
+<%= form_for(profile) do |f| %>
+  <% if profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pic %>
+    <%= f.text_field :pic %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cover_image %>
+    <%= f.text_field :cover_image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :link %>
+    <%= f.text_field :link %>
+  </div>
+
+  <div class="field">
+    <%= f.label :about %>
+    <%= f.text_area :about, :id => "about_area", :cols => 100, :rows => 10 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_played_id %>
+    <%= f.collection_select :last_played_id, Song.order(:album),:id,:title, include_blank: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

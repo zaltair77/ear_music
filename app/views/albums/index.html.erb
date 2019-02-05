@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Albums</h1>
+
+<%= link_to 'Dashboard', "/" %>
+
+<table class="database-table">
+  <thead>
+    <tr>
+      <th>Artwork</th>
+      <th>Title</th>
+      <th>Artist</th>
+      <th>Year</th>
+      <th>Tracks</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @albums.each do |album| %>
+      <tr>
+        <td><img class="database-img" src="<%= album.artwork %>" alt="" /></td>
+        <td><%= album.title %></td>
+        <td><%= album.artist %></td>
+        <td><%= album.year %></td>
+        <td><%= album.tracks %></td>
+        <td><%= link_to 'Show', album %></td>
+        <td><%= link_to 'Edit', edit_album_path(album) %></td>
+        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Album', new_album_path %>

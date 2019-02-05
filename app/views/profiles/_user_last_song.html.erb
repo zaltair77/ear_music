@@ -1,0 +1,8 @@
+<% @song = Song.find_by_id(Profile.find_by_id(session[:profile]).last_played_id) %>
+
+<img src="<%= Album.find_by_title(@song.album).artwork %>" alt="" />
+<div id="song-info">
+  <h2><%= @song.title %></h2>
+  <span><%= @song.length %></span>
+  <h3>From <a href="#"><%= @song.album %></a> by <a href="#"><%= @song.artist %></a></h3>
+</div>

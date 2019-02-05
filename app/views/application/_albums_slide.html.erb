@@ -1,0 +1,12 @@
+<% @albums = Album.all %>
+<div id="album-display">
+  <% if !@albums.nil?
+    @albums.each do |album|%>
+      <div class="album">
+        <img class="album-art" src="<%= album.artwork %>" alt="" />
+        <div class="art-grad"></div>
+        <span class="title-artist"><%= album.title %> <br> by <%= album.artist %></span>
+      </div>
+    <% end
+  end%>
+</div>
